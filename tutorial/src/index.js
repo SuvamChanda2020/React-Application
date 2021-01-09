@@ -1,9 +1,21 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React from "react";
+import ReactDom from "react-dom";
 
-// This function is returning JSX and using React 
-function Greeting(){
-  return <h4>this is Suvam and this is my first Component</h4>
+// This function is returning JSX and using React
+// Stateless Function Component
+// It's using React.CreateElement Function
+// JSX rules
+// Return single element
+// use camelCase for HTML attribute
+// cloese every element
+// formatting
+
+function Greeting() {
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  );
 }
 
-ReactDom.render(<Greeting/>, document.getElementById('root'));
+ReactDom.render(<Greeting />, document.getElementById("root"));
