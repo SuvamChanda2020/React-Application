@@ -10,12 +10,31 @@ import ReactDom from "react-dom";
 // cloese every element
 // formatting
 
-function Greeting() {
+function BookList() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <section>
+      <Book />
+    </section>
   );
 }
+const Book = () => {
+  return (
+    <article>
+      <Image></Image>
+      <Title></Title>
+      <Author></Author>
+    </article>
+  );
+};
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Image = () => (
+  <img
+    src="https://rukminim1.flixcart.com/image/416/416/ju5u1zk0/regionalbooks/n/w/e/taranath-tantrik-samagrah-original-imaffcfvctwa2etv.jpeg?q=70"
+    alt=""
+  />
+);
+
+const Title = () => <h1>Taranath Tantrik</h1>;
+const Author = () => <h4>Taradas Bandopadhyay, Bibhutibhushan Bandopadhyay</h4>;
+
+ReactDom.render(<BookList />, document.getElementById("root"));
