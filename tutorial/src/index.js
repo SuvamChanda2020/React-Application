@@ -11,44 +11,51 @@ import "./index.css";
 // cloese every element
 // formatting
 
+//Setup variables
+
+const firstBook = {
+  title: "Taranath Tantrik",
+  author: "Taradas Bandopadhyay, Bibhutibhushan Bandopadhyay, Suvam Chanda",
+  img:
+    "https://rukminim1.flixcart.com/image/416/416/ju5u1zk0/regionalbooks/n/w/e/taranath-tantrik-samagrah-original-imaffcfvctwa2etv.jpeg?q=70",
+};
+const secondBook = {
+  title: "Ikigai: The Japanese secret to a long and happy life Hardcover – 27",
+  author: "Héctor García",
+  img:
+    "https://images-na.ssl-images-amazon.com/images/I/81l3rZK4lnL.SR160,240_BG243,243,243.jpg",
+};
+
 function BookList() {
   return (
     <section className="booklist">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
   return (
     <article className="book">
-      <Image></Image>
-      <Title></Title>
-      <Author></Author>
+      <img src={props.img} alt="" />
+      <h1>{props.title}</h1>
+      <h4
+        style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}
+      >
+        {props.author}
+      </h4>
+      <p>{props.name}</p>
     </article>
   );
 };
-
-const Image = () => (
-  <img
-    src="https://rukminim1.flixcart.com/image/416/416/ju5u1zk0/regionalbooks/n/w/e/taranath-tantrik-samagrah-original-imaffcfvctwa2etv.jpeg?q=70"
-    alt=""
-  />
-);
-
-const Title = () => <h1>Taranath Tantrik</h1>;
-const Author = () => (
-  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
-    Taradas Bandopadhyay, Bibhutibhushan Bandopadhyay
-  </h4>
-);
 
 ReactDom.render(<BookList />, document.getElementById("root"));
