@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
-
+//CSS
+import "./index.css";
 // This function is returning JSX and using React
 // Stateless Function Component
 // It's using React.CreateElement Function
@@ -12,14 +13,23 @@ import ReactDom from "react-dom";
 
 function BookList() {
   return (
-    <section>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
       <Book />
     </section>
   );
 }
 const Book = () => {
   return (
-    <article>
+    <article className="book">
       <Image></Image>
       <Title></Title>
       <Author></Author>
@@ -35,6 +45,10 @@ const Image = () => (
 );
 
 const Title = () => <h1>Taranath Tantrik</h1>;
-const Author = () => <h4>Taradas Bandopadhyay, Bibhutibhushan Bandopadhyay</h4>;
+const Author = () => (
+  <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+    Taradas Bandopadhyay, Bibhutibhushan Bandopadhyay
+  </h4>
+);
 
 ReactDom.render(<BookList />, document.getElementById("root"));
