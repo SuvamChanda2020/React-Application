@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Book = ({ title, img, author }) => {
+const Book = ({ title, img, author }) => {
   // attribute, eventHandlar
   // onClick, onMouseOver
   const clickHandler = (e) => {
@@ -41,3 +41,5 @@ export const Book = ({ title, img, author }) => {
     </article>
   );
 };
+
+export default Book;
