@@ -15,12 +15,14 @@ import "./index.css";
 
 const books = [
   {
+    id: 1,
     title: "Taranath Tantrik",
     author: "Taradas Bandopadhyay, Bibhutibhushan Bandopadhyay, Suvam Chanda",
     img:
       "https://rukminim1.flixcart.com/image/416/416/ju5u1zk0/regionalbooks/n/w/e/taranath-tantrik-samagrah-original-imaffcfvctwa2etv.jpeg?q=70",
   },
   {
+    id: 2,
     title:
       "Ikigai: The Japanese secret to a long and happy life Hardcover – 27",
     author: "Héctor García",
@@ -28,17 +30,19 @@ const books = [
       "https://images-na.ssl-images-amazon.com/images/I/81l3rZK4lnL.SR160,240_BG243,243,243.jpg",
   },
 ];
-const names = ["Suvam", "Rahul", "Avik"];
-const newNames = names.map((name) => {
-  return <h1>{name}</h1>;
-});
-console.log(newNames);
+
 function BookList() {
-  return <section className="booklist">{newNames}</section>;
+  return (
+    <section className="booklist">
+      {books.map((book) => {
+        return <Book key={book.id} {...book}></Book>;
+      })}
+    </section>
+  );
 }
-const Book = ({ img, title, author }) => {
+const Book = ({ title, img, author }) => {
   // props Destructuring
-  //const { img, title, author } = props;
+
   return (
     <article className="book">
       <img src={img} alt="" />
